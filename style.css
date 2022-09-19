@@ -1,0 +1,218 @@
+*,
+*::before,
+*::after {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "Fira Code";
+}
+
+@font-face {font-family: "Fira Code"; src: url("FiraCode.ttf")}
+@font-face {font-family: "Raleway"; src: url("RalewaySemiBold.ttf")}
+@font-face {font-family: "Palooka"; src: url("PalookaBB.ttf")}
+@font-face {font-family: "Entanglement"; src: url("Entanglement.ttf")}
+@font-face {font-family: "Lato"; src: url("Lato.ttf")}
+
+*::selection {background: #F7DC64;}
+html {scroll-behavior: smooth !important;}
+
+:root {
+  --gray: #191919;
+  --green: rgb(173, 232, 160);
+  --yellow: rgb(214, 218, 146);
+  --blue: rgb(168, 222, 234);
+}
+
+#singularityBG, #profileBG, #profileForm, .extraBG, #mainBG, .mainTXT, .lineSection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	background-color: var(--gray);
+	display: flex;
+	justify-content: space-around;
+}
+
+#header {
+	z-index: 1000;
+	position: fixed;
+	top: 0vh;
+	left: 0vw;
+	width: 100vw;
+	height: 10vh;
+	background-color: rgb(106, 175, 198);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  border: 1vh solid rgb(13, 109, 141);
+}
+
+#header p {
+	z-index: 1000;
+	position: relative;
+	color: white;
+	text-align: center;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	font-size: 1.4vw;
+}
+
+#header p a, #header p i {font-family: "Lato"; font-weight: 700; letter-spacing: 0.14vw;}
+
+#singularityBG {
+	z-index: 97;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--gray);
+}
+
+#singularityTXT {
+	position: absolute;
+	font-size: 8vh;
+  font-weight: 700;
+	color: rgb(255, 255, 160);
+	transform: translateY(-7vh);
+}
+
+#singularity {
+	z-index: 98;
+	position: relative;
+	border-radius: 100%;
+	background-color: rgb(255, 255, 255);
+	border: 0vh solid white;
+	width: 0vw;
+	height: 0vw;
+	transform: translateY(10vh);
+	transition: background-color 320ms ease-in-out 50ms,
+		border 320ms ease-in-out 50ms, width 700ms ease-in-out 100ms,
+		height 700ms ease-in-out 100ms, border-radius 400ms ease-in 0ms;
+}
+
+#singularity:hover {
+	border: 2vh solid rgb(220, 220, 220);
+	cursor: pointer;
+}
+
+#profileBG {
+  z-index: 120;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  transition: transform 1300ms ease-out,
+    background-color 1500ms ease-in-out;
+  background-color: white;
+  transform: translate(150vw, 2vh);
+}
+
+#profileForm {
+  flex-direction: column;
+  font-size: 6vh;
+  font-weight: 600;
+  color: #007A7A;
+  transition: transform 1300ms ease-in;
+}
+
+#profileForm *:not(#profileButton) {
+  border: 2vh double #003F5D;
+  padding: 3vh 3vh 3vh 3vh;
+  margin: 3vh 0vw 3vh 0vw;
+  width: 40vw;
+  height: 20vh;
+  text-align: center;
+  font-family: "Palooka";
+  font-size: 10vh; 
+  color: rgb(66, 66, 66);
+}
+
+#profileButton {
+  border-radius: 100%;
+  border: 2vh solid teal;
+  height: 10vh;
+  width: 10vh;
+  transition: background 170ms ease-in-out;
+}
+
+#profileButton:hover {background: rgb(66, 66, 66); cursor: pointer;}
+
+.extraBG {
+	z-index: 97;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: antiquewhite;
+  text-align: center;
+  border: 1vh dotted rgb(12, 12, 107);
+  overflow-y: scroll;
+}
+
+#sourcesTXT, #meta-infoTXT {
+  position: absolute;
+  padding: 2vh 5vw 2vh 5vw;
+  font-family: "Lato", sans-serif;
+  color: darkcyan;
+  font-size: 1.5vw;
+  font-weight: 900;
+  transform: translate(0vw, -3vw);
+}
+
+#sourcesTXT {font-size: 1.2vw; transform: translate(0vw, 12vw); padding: 6vw 0vw 6vw 0vw;}
+
+.extraBG div {
+  position: absolute;
+  border: 1vw double rgb(12, 12, 107);
+  border-radius: 1vw;
+}
+
+#whiteboard {transform: translate(-18vw, 9vw);}
+#notebook {transform: translate(18vw, 9vw);}
+#cssPic {transform: translate(-38vw, 8vw);}
+#jsPic {transform: translate(38vw, 8vw);}
+#cssPic, #jsPic {max-width: 15vw;}
+#cssPic img, #jsPic img {height: 28vw;}
+.extraBG div img {height: 25vw;}
+
+#mainBG {
+	z-index: 140;
+  display: none;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--gray);
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+#mainBG::-webkit-scrollbar {display: none;}
+.varName {color: white; font-size: 1.5vw;}
+
+.mainTXT {
+  z-index: 141;
+  font-family: "Entanglement";
+  letter-spacing: 1.5vw;
+  font-size: 4vw;
+  color: white;
+  line-height: 85vh;
+}
+
+.lineSection {
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 25vh;
+}
+
+.line {
+  color: white;
+  transform: translate(0vw, 0vh);
+  max-width: 40vw;
+  opacity: 0;
+  transition: 350ms;
+  font-size: 1.5vw;
+}
+
+.line:nth-child(odd).show {transform: translate(-70%, 0vh); margin-left: 5vw; opacity: 1; text-align: left;}
+.line:nth-child(even).show {transform: translate(70%, 0vh); margin-right: 5vw; opacity: 1; text-align: right;}
